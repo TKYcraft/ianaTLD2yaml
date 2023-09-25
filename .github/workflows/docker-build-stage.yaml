@@ -33,7 +33,4 @@ jobs:
         with:
           context: .
           platforms: linux/amd64,linux/arm64
-          push: true
-          tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/ianaTLD2yaml-dev:stage-${{ env.BUILD_DATETIME }}
-            ${{ secrets.DOCKERHUB_USERNAME }}/ianaTLD2yaml-dev:latest
+          push: false
