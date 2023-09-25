@@ -1,3 +1,5 @@
+#!/usr/local/bin/perl
+
 require HTTP::Request;
 use LWP::UserAgent;
 
