@@ -1,7 +1,10 @@
 #!/usr/local/bin/perl
 
-require HTTP::Request;
+use strict;
+use warnings;
 use LWP::UserAgent;
+use YAML::Tiny;
+require HTTP::Request;
 
 main();
 exit;
@@ -18,12 +21,22 @@ sub get_iana_tld_list {
     @tld_list = grep { !/^#/ } @tld_list; # コメント行の除外
     @tld_list = grep { !/^XN--/ } @tld_list; # `XN--`で始まる行の除外
 
-    foreach my $line (@tld_list) {
-        print "$line\n";
-    }
+    return @tld_list
+}
+
+sub dump_yaml_list {
+    my (@tld_list) = @_;
+    my $filename = "tld_list.yaml";
+
+    my $data = {
+        TLD => \@tld_list,
+    };
+
+    my $yaml = YAML::Tiny->new($data);
+    $yaml->write($filename);
 }
 
 sub main {
-    get_iana_tld_list();
-
+    my @tld_list = get_iana_tld_list();
+    dump_yaml_list(@tld_list);
 }
