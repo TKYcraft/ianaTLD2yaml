@@ -1,0 +1,6 @@
+services:
+  ianatld2yaml:
+    build: .
+    container_name: ianatld2yaml
+    volumes:
+      - ./app/:/opt/app/
