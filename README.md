@@ -1,4 +1,6 @@
 # ianaTLD2yaml
+Origin URL: https://data.iana.org/TLD/tlds-alpha-by-domain.txt
+
 ## How to
 ### original
 ```bash
