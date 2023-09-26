@@ -9,13 +9,13 @@ perl ianaTLD2yaml.pl
 cat app/tld_list.yaml
 ```
 
-### docker
+### Docker
 ```bash
 docker compose up
 cat app/tld_list.yaml
 ```
 
-### docker(practical use)
+### Docker (Practical use)
 ```Dockerfile
 FROM tkycraft/ianatld2yaml:latest as tld_list_maker
 RUN perl ianaTLD2yaml.pl
