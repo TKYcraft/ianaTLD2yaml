@@ -19,7 +19,7 @@ sub get_iana_tld_list {
     
     my @tld_list = split(/\n/, $res->content);
     @tld_list = grep { !/^#/ } @tld_list; # コメント行の除外
-    @tld_list = grep { !/^XN--/ } @tld_list; # `XN--`で始まる行の除外
+    # @tld_list = grep { !/^XN--/ } @tld_list; # `XN--`で始まる行の除外
 
     return @tld_list
 }
