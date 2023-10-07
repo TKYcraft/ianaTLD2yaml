@@ -32,7 +32,7 @@ sub dump_yaml_list {
         TLD => \@tld_list,
     };
 
-    my $yaml = YAML::Tiny->new($data, { QuoteNumericStrings => 1 });
+    my $yaml = YAML::Tiny->new($data);
     $yaml->write($filename);
 }
 
