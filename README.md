@@ -28,13 +28,13 @@ COPY --from=tld_list_maker /opt/app/tld_list.yaml ./tld_list.yaml
 ```yaml
 ---
 TLD:
-  - AAA
-  - AARP
-  - ABB
-  - ABBOTT
-  - ABBVIE
+  - "AAA"
+  - "AARP"
+  - "ABB"
+  - "ABBOTT"
+  - "ABBVIE"
   ~~~
-  - ZONE
-  - ZUERICH
-  - ZW
+  - "ZONE"
+  - "ZUERICH"
+  - "ZW"
 ```

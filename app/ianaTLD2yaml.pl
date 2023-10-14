@@ -3,7 +3,6 @@
 use strict;
 use warnings;
 use LWP::UserAgent;
-use YAML::Tiny;
 require HTTP::Request;
 
 main();
@@ -28,12 +27,15 @@ sub dump_yaml_list {
     my (@tld_list) = @_;
     my $filename = "tld_list.yaml";
 
-    my $data = {
-        TLD => \@tld_list,
-    };
+    open my $fh, '>', $filename or die "Cannot open file: $!";
+    print $fh "---\n";
+    print $fh "TLD:\n";
+    foreach my $tld (@tld_list) {
+        print $fh "  - \"$tld\"\n";
+    }
+    close $fh;
 
-    my $yaml = YAML::Tiny->new($data);
-    $yaml->write($filename);
+    print "YAML data has been written to $filename\n";
 }
 
 sub main {
