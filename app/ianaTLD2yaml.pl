@@ -3,7 +3,6 @@
 use strict;
 use warnings;
 use LWP::UserAgent;
-use YAML::Tiny;
 require HTTP::Request;
 
 main();
