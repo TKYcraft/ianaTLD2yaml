@@ -4,7 +4,7 @@ Origin URL: https://data.iana.org/TLD/tlds-alpha-by-domain.txt
 ## How to
 ### original
 ```bash
-cpan -T HTTP::Request LWP::Protocol::https LWP::UserAgent YAML::Tiny
+cpan -T HTTP::Request LWP::Protocol::https LWP::UserAgent
 perl ianaTLD2yaml.pl
 cat app/tld_list.yaml
 ```
