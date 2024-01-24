@@ -34,3 +34,16 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: false
+
+  show_yaml:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v4
+      -
+        name: run docker and show yaml
+        shell: bash
+        run: |
+          docker compose run --rm --entrypoint "" ianatld2yaml bash -c "perl ianaTLD2yaml.pl && cat tld_list.yaml"
+          
