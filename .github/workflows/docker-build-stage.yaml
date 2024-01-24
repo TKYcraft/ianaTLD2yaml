@@ -45,10 +45,10 @@ jobs:
         name: Run docker build
         shell: bash
         run: |
-          docker compose up -d
+          docker compose up
       -
         name: Show yaml
         shell: bash
         run: |
-          cat app/tld_list.yaml
+          pwd && la -al && cat ./app/tld_list.yaml
           
