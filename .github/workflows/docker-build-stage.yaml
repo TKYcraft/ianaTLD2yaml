@@ -42,8 +42,13 @@ jobs:
         name: Checkout
         uses: actions/checkout@v4
       -
-        name: run docker and show yaml
+        name: Run docker build
         shell: bash
         run: |
-          docker compose run --rm --entrypoint "" ianatld2yaml bash -c "perl ianaTLD2yaml.pl && cat tld_list.yaml"
+          docker compose up -d
+      -
+        name: Show yaml
+        shell: bash
+        run: |
+          cat app/tld_list.yaml
           
