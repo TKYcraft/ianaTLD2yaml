@@ -50,5 +50,5 @@ jobs:
         name: Show yaml
         shell: bash
         run: |
-          pwd; la -al; cat ./app/tld_list.yaml
+          pwd; ls -al; cat ./app/tld_list.yaml
           
