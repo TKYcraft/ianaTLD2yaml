@@ -1,4 +1,4 @@
-FROM perl:5.39.7-bullseye
+FROM perl:5.39.8-bullseye
 
 RUN cpan -T \
     HTTP::Request \
